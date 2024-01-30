@@ -3,20 +3,20 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const DashboardPage = () => {
   const { state } = useLocation();
-  const navi = useNavigate();
+  const nav = useNavigate();
   console.log(state);
 
   useEffect(() => {
     const data = localStorage.getItem("Authenticate");
     if (!data) {
-      navi("/admin");
+      nav("/admin");
     }
   }, []);
 
   return (
     <div className="grid grid-cols-10 h-screen">
       <div className="col-span-2">
-        <h1>{state.data?.email}</h1>
+        <h1>{state?.data?.email}</h1>
         <ul>
           <Link to="/dashboard">
             <li>Dashboard</li>

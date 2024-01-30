@@ -20,7 +20,7 @@ const AdminPage = () => {
         e.preventDefault();
         console.log(formData);
 
-        const data =await Authenticate("/user", formData);
+        const data =await Authenticate("user", formData);
       if (data) {
         localStorage.setItem("Authenticate",JSON.stringify(data));
         nav("/dashboard", { state: {data}});
@@ -28,7 +28,7 @@ const AdminPage = () => {
     };
 
   return (
-    <div className='h-[300px] w-[300px] mx-auto  bg-red-500'>
+    <div className='h-[300px] w-[300px] mx-auto  bg-gray-500'>
        <div className='w-[50%] mx-auto '>
        <form onSubmit={handleSubmit} action="" className='flex flex-col  pt-10'>
             <div className='flex flex-col py-5 '>
